@@ -31,6 +31,7 @@ public class StudentRegController {
     @PostMapping("/submit-student")
     private ModelAndView saveStudent(Student student, UserStudent userStudent) {
         studRepository.save(student);
+        userStudent.setStudent(student);
         userStudentRepository.save(userStudent);
         return new ModelAndView("redirect:/index");
     }

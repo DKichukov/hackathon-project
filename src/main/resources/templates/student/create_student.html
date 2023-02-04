@@ -37,8 +37,10 @@
             <h1 class="text-center">Create New Student</h1>
             <div class="card-body">
 
-                <form th:action="@{/submit-student}" th:object="${student}" method="POST">
-                    <div class="form-group p-1">
+                <form th:action="@{/submit-student}" method="POST">
+                    <div>
+                    <div class="form-group p-1" th:object="${student}">
+                      <div>
                         <input type="hidden" th:field="*{id}"/>
                         <label>First name</label>
                         <input
@@ -46,32 +48,32 @@
                                 name="firstName"
                                 th:field="*{firstName}"
                                 class="form-control"
-                                placeholder="Enter Student First Name"
+                                placeholder="Enter First Name"
                         />
-                    </div>
+                        </div>
 
-                    <div class="form-group p-1">
+                        <div class="form-group p-1">
                         <label> Last name</label>
                         <input
                                 type="text"
                                 name="lastName"
                                 th:field="*{lastName}"
                                 class="form-control"
-                                placeholder="Enter Student Last Name"
+                                placeholder="Enter Last Name"
                         />
-                    </div>
+                        </div>
 
-                    <div class="form-group p-1">
+                        <div class="form-group p-1">
                         <label> E-mail</label>
                         <input
                                 type="text"
                                 name="email"
                                 th:field="*{email}"
                                 class="form-control"
-                                placeholder="Enter Student email address"
+                                placeholder="Enter email address"
                         />
-                    </div>
-                    <div class="form-group p-1">
+                        </div>
+                        <div class="form-group p-1">
                         <label>Age</label>
                         <input
                                 type="text"
@@ -80,8 +82,8 @@
                                 class="form-control"
                                 placeholder="Enter your age"
                         />
-                    </div>
-                    <div class="form-group p-1">
+                        </div>
+                        <div class="form-group p-1">
                         <label>City</label>
                         <input
                                 type="text"
@@ -91,20 +93,35 @@
                                 placeholder="Enter city"
                         />
                         
-                    </div>
-                    <div class="form-group p-1">
+                        </div>
+                        <div class="form-group p-1">
                         <label>Status</label>
                         <select th:type="text" th:field="*{status}">
                             <option th:each="stat : ${statusList}"
                                     th:text="${stat.status}"
                                     th:value="${stat}"></option>
                         </select>
+                        </div>
+
                     </div>
-                    
+                    <div class="form-group p-1" th:object="${user}">
+                        <div class="form-group p-1">
+                            <label>Password</label>
+                            <input
+                                    type="text"
+                                    name="password"
+                                    th:field="*{password}"
+                                    class="form-control"
+                                    placeholder="Enter password"
+                            />
+                        </div>
+
+                    </div>
                     <div class="box-footer">
-                        <button type="submit" class="btn btn-primary">
-                            Submit
-                        </button>
+                    <button type="submit" class="btn btn-primary">
+                        Submit
+                    </button>
+                </div>
                     </div>
                 </form>
             </div>

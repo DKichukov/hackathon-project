@@ -9,7 +9,6 @@ public class UserBusiness {
     private Integer id;
     @OneToOne
     private Business business;
-    private String username;
 
     private String password;
 
@@ -19,14 +18,6 @@ public class UserBusiness {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
     }
 
     public String getPassword() {

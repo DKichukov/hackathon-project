@@ -10,7 +10,6 @@ public class UserStudent {
     private Integer id;
     @OneToOne
     private Student student;
-    private String username;
     private String password;
 
     public Integer getId() {
@@ -19,14 +18,6 @@ public class UserStudent {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
     }
 
     public String getPassword() {
