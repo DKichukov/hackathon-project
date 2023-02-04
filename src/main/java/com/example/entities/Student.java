@@ -19,6 +19,12 @@ public class Student {
    @ManyToMany(mappedBy = "students")
    private Set<Offer> offers = new HashSet<>();
 
+   @ManyToMany(mappedBy = "students")
+   private Set<Opportunity> opportunities = new HashSet<>();
+
+   @ManyToMany(mappedBy = "students")
+   private Set<Interest> interests = new HashSet<>();
+
    public Integer getId() {
       return id;
    }
@@ -81,5 +87,21 @@ public class Student {
 
    public void setOffers(Set<Offer> offers) {
       this.offers = offers;
+   }
+
+   public Set<Opportunity> getOpportunities() {
+      return opportunities;
+   }
+
+   public void setOpportunities(Set<Opportunity> opportunities) {
+      this.opportunities = opportunities;
+   }
+
+   public Set<Interest> getInterests() {
+      return interests;
+   }
+
+   public void setInterests(Set<Interest> interests) {
+      this.interests = interests;
    }
 }
