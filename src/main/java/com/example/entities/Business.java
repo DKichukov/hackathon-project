@@ -3,11 +3,12 @@ package com.example.entities;
 import javax.persistence.*;
 
 @Entity
-public class Business {
+public class    Business {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
+    private String email;
     private String description;
     private String city;
     private String address;
@@ -52,4 +53,11 @@ public class Business {
         this.address = address;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 }

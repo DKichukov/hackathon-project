@@ -16,13 +16,13 @@ public class BusinessRegController {
     BusinessRepository busRepository;
 
     @GetMapping("/create_business")
-    public String createStudent(Model model) {
+    public String createBusiness(Model model) {
         Business business = new Business();
         model.addAttribute("business", business);
-        return "create_business";
+        return "/business/create_business";
     }
 
-    @PostMapping("/submit_business")
+    @PostMapping("/submit-business")
     private ModelAndView saveBusiness(Business business) {
         busRepository.save(business);
         return new ModelAndView("redirect:/index");

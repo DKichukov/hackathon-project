@@ -19,7 +19,7 @@ public class StudentRegController {
     public String createStudent(Model model) {
         Student student = new Student();
         model.addAttribute("student", student);
-        return "create_student";
+        return "/student/create_student";
     }
 
     @PostMapping("/submit-student")
