@@ -8,7 +8,6 @@ public class UserStudent {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     private Integer id;
-
     @OneToOne
     private Student student;
     private String username;

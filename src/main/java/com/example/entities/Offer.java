@@ -11,6 +11,8 @@ public class Offer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String description;
+    @Column(length = 60)
+
     private String location;
     @OneToOne
     private Interest interest;

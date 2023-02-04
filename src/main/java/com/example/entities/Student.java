@@ -12,8 +12,10 @@ public class Student {
    private Integer id;
    private String firstName;
    private String lastName;
+   @Column(nullable = false)
    private String email;
    private int age;
+   @Column(length = 60)
    private String city;
    private Status status;
    @ManyToMany(mappedBy = "students")

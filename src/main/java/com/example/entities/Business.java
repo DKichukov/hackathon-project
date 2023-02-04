@@ -3,13 +3,16 @@ package com.example.entities;
 import javax.persistence.*;
 
 @Entity
-public class    Business {
+public class Business {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    @Column(length = 60)
     private String name;
+    @Column(nullable = false)
     private String email;
     private String description;
+    @Column(length = 60)
     private String city;
     private String address;
 

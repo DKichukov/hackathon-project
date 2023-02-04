@@ -6,9 +6,7 @@ import javax.persistence.*;
 public class UserBusiness {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
     private Integer id;
-
     @OneToOne
     private Business business;
     private String username;

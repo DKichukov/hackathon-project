@@ -2,26 +2,23 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Students</title>
+    <title>Business</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
   
 </head>
 <body>
 <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-    <!-- Brand -->
-    <a class="navbar-brand" href="@{/students}">Education plus</a>
+    <a class="navbar-brand" href="@{/students}">Education plus </a>
 
-    <!-- Toggler/collapsibe Button -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <!-- Navbar links -->
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" th:href="@{/students}">Students</a>
+                <a class="nav-link" th:href="${*fistName} +  ' ' + ${*lastName}"  ></a>
             </li>
         </ul>
     </div>
@@ -29,13 +26,8 @@
 
 <div class="container">
     <div class="row">
-        <h1>List Students</h1>
+        <h4>Информация за потребител: </h4>
         <div class="row">
-            <div class="col-lg-3">
-                <a class="btn btn-primary btn-sm mb-3" th:href="@{/students/new}">
-                    Add Student
-                </a>
-            </div>
         </div>
     </div>
     <table class="table table-striped table-bordered">
@@ -45,21 +37,20 @@
             <th>Student Last Name</th>
             <th>Student E-mail</th>
             <th>Student Age</th>
-            <th>Student city</th>
+            <th>Student City</th>
             <th>Student status</th>
         
         </tr>
         </thead>
         <tbody>
-        <tr th:each="student: ${students}">
+        <tr >
             <td th:text="${student.firstName}"></td>
             <td th:text="${student.lastName}"></td>
-            <td th:text="${student.age}"></td>
+            <td th:text="${student.email}"></td>
             <td th:text="${student.age}"></td>
             <td th:text="${student.city}"></td>
             <td th:text="${student.status}"></td>
-           
-    
+
         </tr>
         </tbody>
     </table>
