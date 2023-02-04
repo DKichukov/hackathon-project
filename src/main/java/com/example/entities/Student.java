@@ -17,8 +17,6 @@ public class Student {
    private String city;
    private Status status;
 
-   private String password;
-
    @ManyToMany(mappedBy = "students")
    private Set<Offer> offers = new HashSet<>();
 
@@ -108,11 +106,4 @@ public class Student {
       this.interests = interests;
    }
 
-   public String getPassword() {
-      return password;
-   }
-
-   public void setPassword(String password) {
-      this.password = password;
-   }
 }

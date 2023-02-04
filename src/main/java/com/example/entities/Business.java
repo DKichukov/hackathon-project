@@ -12,7 +12,6 @@ public class Business {
     private String email;
     private String city;
     private String address;
-    private String password;
 
     public Integer getId() {
         return id;
@@ -61,11 +60,4 @@ public class Business {
         this.email = email;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
 }
