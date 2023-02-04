@@ -37,7 +37,7 @@
             <h1 class="text-center">Create New Student</h1>
             <div class="card-body">
 
-                <form th:action="@{/students/save}" th:object="${student}" method="POST">
+                <form th:action="@{/submit-student}" th:object="${student}" method="POST">
                     <div class="form-group p-1">
                         <input type="hidden" th:field="*{id}"/>
                         <label>First name</label>
@@ -90,7 +90,7 @@
                                 class="form-control"
                                 placeholder="Enter city"
                         />
-                        
+
                     </div>
                     <div class="form-group p-1">
                         <label>Status</label>
@@ -100,7 +100,7 @@
                                     th:value="${stat}"></option>
                         </select>
                     </div>
-                    
+
                     <div class="box-footer">
                         <button type="submit" class="btn btn-primary">
                             Submit

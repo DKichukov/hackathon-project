@@ -16,6 +16,9 @@ public class Student {
    private int age;
    private String city;
    private Status status;
+
+   private String password;
+
    @ManyToMany(mappedBy = "students")
    private Set<Offer> offers = new HashSet<>();
 
@@ -103,5 +106,13 @@ public class Student {
 
    public void setInterests(Set<Interest> interests) {
       this.interests = interests;
+   }
+
+   public String getPassword() {
+      return password;
+   }
+
+   public void setPassword(String password) {
+      this.password = password;
    }
 }
