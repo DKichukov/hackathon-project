@@ -16,6 +16,11 @@ public class Business {
     private String city;
     private String address;
 
+    public Business(String email){
+        this.email=email;
+    }
+    public Business() {}
+
     public Integer getId() {
         return id;
     }

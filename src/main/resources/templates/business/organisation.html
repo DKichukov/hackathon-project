@@ -30,17 +30,16 @@
             <th>Description</th>
             <th>City</th>
             <th>Address</th>
-        
         </tr>
         </thead>
         <tbody class = "text-primary" th:object="${business}">
         <tr th:each="bu: ${list}">
             <tr >
             <td th:text="*{email}"></td>
-             <td th:text="*{name}"></td>
-                <td th:text="*{description}"></td>
+            <td th:text="*{name}"></td>
+            <td th:text="*{description}"></td>
             <td th:text="*{city}"></td>
-        <td th:text="*{address}"></td>
+            <td th:text="*{address}"></td>
         </tr>
         </tbody>
     </table>
