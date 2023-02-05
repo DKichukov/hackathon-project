@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education plus</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+    <div class="container">
+        <a href="#" class="navbar-brand">Education plus</a>
+    </div>
+</nav>
+
+<div class="cool-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+    <h4 class="">Добавяне на обява</h4>
+    <div class="card-body">
+        <form th:action="@{/offer/{id} (id=${offer.id})}" th:object="${offer}" method="POST">
+            <div class="form-group">
+
+                <label>Description</label>
+                <input type="text" name="description" th:field="*{description}" class="form-control"
+                       placeholder="Enter descripton"/>
+            </div>
+
+            <div class="form-group">
+                <label>Location</label>
+                <input type="text" name="location" th:field="*{lastName}" class="form-control"
+                       placeholder="Enter Student Last Name"/>
+            </div>
+
+            <div class="form-group">
+                <label class="p-2"> Opportunity </label>
+                <select th:field="*{opportunity}" require>
+                    <th:block th:each="opportunity : ${listOpportunities}">
+                        <option th:text="${opportunity.name}" th:value="${opportunity.id}"/>
+                    </th:block>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="p-2"> Business </label>
+                <select th:field="*{business}" require>
+                    <th:block th:each="business : ${listBusinesses}">
+                        <option th:text="${business.name}" th:value="${business.id}"/>
+                    </th:block>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="p-2"> Interest </label>
+                <select th:field="*{interest}" require>
+                    <th:block th:each="interest : ${listInterests}">
+                        <option th:text="${interest.name}" th:value="${interest.id}"/>
+                </select>
+            </div>
+
+
+            <div class="box-footer">
+                <button type="submit" class="btn btn-primary">
+                    Submit
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

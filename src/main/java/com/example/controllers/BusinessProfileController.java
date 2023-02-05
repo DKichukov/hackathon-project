@@ -23,6 +23,7 @@ public class BusinessProfileController {
         Business business = bo.get();
         model.addAttribute("business", business);
         System.out.println(businessId);
-        return "business/organisation";
+//        return "business/organisation";
+        return "business/business-user";
     }
 }

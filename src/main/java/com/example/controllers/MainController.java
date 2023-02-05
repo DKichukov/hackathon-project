@@ -10,5 +10,11 @@ public class MainController {
         return "index";
     }
 
+    @GetMapping("/business-user")
+    public String showUserForm() {
+        return "/business/business-user";
+    }
+
+
 
 }

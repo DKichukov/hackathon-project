@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html  xmlns:th="http://www.thymeleaf.org" lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -11,22 +11,22 @@
 </head>
 
 <body>
-    
+
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
         <div class="container">
             <a href="#" class="navbar-brand">Education plus</a>
-        
+
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
-            <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
             </button>
 
-        <div class="collapse navbar-collapse" id="navmenu">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                       <a href="/about-us" class="nav-link">About us</a>
-                </li>
-            </ul>
-        </div>
+            <div class="collapse navbar-collapse" id="navmenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a href="/about-us" class="nav-link">About us</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
 
@@ -34,7 +34,7 @@
         <h1 class="text-center text-">Добре дошли в Education</h1>
         <section class="bg-dark text-light p-5 text-center text-sm-start">
             <div class="container">
-                 <div class="d-sm-flex aligng-items-center justify-content-between">    
+                <div class="d-sm-flex aligng-items-center justify-content-between">
                     <div>
                         <h1><span class="text-warning">Добре дошли в Education</span></h1>
                         <p class="lead my-4">Education е платформа за търсене и установяване на делови контакти:</p>
@@ -42,9 +42,9 @@
                         <a href="/login_business" class="btn btn-primary">Business</a>
                     </div>
                     <img class="img-fluid w-50 d-none d-sm-block" src="img/Education.png" alt="education plus">
-                 </div>
+                </div>
             </div>
-        
+            <a th:href="@{/search}" class="btn btn-primary">search</a>
         </section>
     </div>
 

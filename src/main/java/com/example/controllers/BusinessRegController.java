@@ -1,7 +1,6 @@
 package com.example.controllers;
 
 import com.example.entities.Business;
-import com.example.entities.Student;
 import com.example.entities.UserBusiness;
 import com.example.repositories.BusinessRepository;
 import com.example.repositories.UserBusinessRepository;
