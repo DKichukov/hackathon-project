@@ -9,8 +9,8 @@ import java.util.Set;
 public class Interest {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Integer id;
-    String description;
+   private Integer id;
+   private String description;
 
     @ManyToMany(cascade = {CascadeType.ALL})
     @JoinTable(name = "students_interests",

@@ -12,17 +12,16 @@
 
 <body>
 
-<div class="container rounded bg-white mt-5 mb-5" th:action="@{/business/organisation}">
+<div class="container rounded mt-5 mb-5" th:action="@{/business/organisation}">
     <div class="row" th:object="${business}">
         <div class="col-md-3 border-right">
             <div class="d-flex flex-column align-items-center text-center p-3 py-5">
                 <img class="rounded-circle mt-5"
-                     width="150px"
-                     src="../hackathon-project/src/main/resources/static/img/busines-profile.jpg"><span
+                     width="250px"
+                     src="/img/business-profile1.png"><span
                     class="font-weight-bold" th:text="${business.name}"></span><span
                     class="text-black-50" th:text="${business.email}"></span><span> </span>
             </div>
-
         </div>
         <div class=" col-md-5 border-right">
             <div class="p-3 py-5">
@@ -31,29 +30,25 @@
                 </div>
                 <div class="row mt-2">
                     <div class="col-md-6"><label class="labels">Име</label>
-                        <p type="text" class="text-success" th:text="*{name}" placeholder="bussines name" value="">
+                        <p type="text" class="text-success" th:text="*{name}">
                     </div>
                 </div>
                 <div class="row mt-3">
                     <div class="col-md-12"><label class="labels">Address</label>
                         <p type="text"
-                           class="text-success" th:text="*{address}" placeholder="enter address" value=""></div>
+                           class="text-success" th:text="*{address}"></div>
                     <div class="col-md-12"><label class="labels">City</label>
                         <p type="text" class="text-success"
-                           th:text="*{city}" placeholder="enter city" value=""></div>
+                           th:text="*{city}"></p></div>
                     <div class="col-md-12"><label class="labels">Email</label>
                         <p type="email"
-                           class="text-success" th:text="*{email}" placeholder="enter email id" value=""></div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="p-3 py-5">
+                           class="text-success" th:text="*{email}"></div>
                     <div class="col-md-12"><label class="labels">Description</label>
-                        <p type="text"
-                           class="text-success" placeholder="dexcription" value=""></div>
-                    <br>
+                        <p type="email"
+                           class="text-success" th:text="*{description}"></div>
                 </div>
             </div>
+
         </div>
     </div>
 </div>

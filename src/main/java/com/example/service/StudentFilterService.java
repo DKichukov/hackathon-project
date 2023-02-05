@@ -19,7 +19,7 @@ public class StudentFilterService {
     @Autowired
     OpportunityRepository opportunityRepository;
 
-    private List<Interest> getInterestList(String find) {
+    public List<Interest> getInterestList(String find) {
         List<Interest> newList = new ArrayList<>();
         for (Interest inter : interestRepository.findAll())
             if (inter.getDescription().equals(find)) {
@@ -28,7 +28,7 @@ public class StudentFilterService {
         return newList;
     }
 
-    private List<Opportunity> getOpportunityList(String find) {
+    public List<Opportunity> getOpportunityList(String find) {
         List<Opportunity> newList = new ArrayList<>();
         for (Opportunity op : opportunityRepository.findAll())
             if (op.getDescription().equals(find)) {

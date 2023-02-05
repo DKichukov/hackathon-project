@@ -40,8 +40,12 @@ public class StudentProfileController {
 
     @GetMapping("/search")
     private String getAllCriterias(Model model) {
+        Opportunity opportunity = new Opportunity();
+        Interest interest = new Interest();
         Iterable<Opportunity> opportunities = opportunityRepository.findAll();
         Iterable<Interest> interests = interestRepository.findAll();
+        model.addAttribute("opportunity", opportunity);
+        model.addAttribute("interest", interest);
         model.addAttribute("listInterests", interests);
         model.addAttribute("listOpportunities", opportunities);
         return "student/search";
@@ -49,7 +53,7 @@ public class StudentProfileController {
 
 //    @PostMapping("/search-submit")
 //    private ModelAndView saveChoice(Interest interest, Opportunity opportunity, Model model) {
-//
+//        List<Object> intList = Collections.singletonList(studentFilterService.getInterestList(interest.getDescription()));
 //        return new ModelAndView("");
 //    }
 

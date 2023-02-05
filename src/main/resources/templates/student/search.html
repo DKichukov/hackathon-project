@@ -14,61 +14,46 @@
 
 <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
     <div class="container">
-        <a href="#" class="navbar-brand">Education plus</a>
+        <a th:href="@{/index}" class="navbar-brand">Home</a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+        <button class="navbar-toggler" type="btn btn-success" data-bs-toggle="collapse" data-bs-target="#navmenu">
             <span class="navbar-toggler-icon"></span>
         </button>
-
-        <div class="collapse navbar-collapse" id="navmenu">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a href="#questions" class="nav-link">Jobs</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/about-us" class="nav-link">About us</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#questions" class="nav-link">Questions</a>
-                </li>
-            </ul>
-        </div>
     </div>
 </nav>
 
 <div class="container text-centered">
-    <h1 class="text-centered">Търсене по критерии:</h1>
-    <section class="bg-secondary text-light p-5 text-center text-sm-start">
-        <div class="container">
-            <div class="d-sm-flex align-items-center justify-content-between">
-
-                <label class="text-warning text-lg display-flex"> Opportunity </label>
-                <select th:type="text" th:field="*{description}" required>
-                    <option th:each="op : ${listOpportunities}"
-                            th:text="${op.description}"
-                            th:value="${op}"></option>
-                </select>
-                <!--                <select th:field="*{description}">-->
-<!--                    <th:block th:each="op : ${listOpportunities}">-->
-<!--                        <option th:text="${op.description}" th:value="${op}"/>-->
-<!--                    </th:block>-->
-<!--                </select>-->
-
-                <!--                <label class="text-warning text-lg"> Interest </label>-->
-                <!--                <select th:field="*{description}" required>-->
-                <!--                    <th:block th:each="interest : ${listInterests}">-->
-                <!--                        <option th:text="${interest.description}" th:value="${interest.id}"/>-->
-                <!--                    </th:block>-->
-                <!--                </select>-->
-                <!--                <a class="btn btn-outline-info"-->
-                <!--                   th:href="@{}">Търси</a>-->
+    <h4 class="text-centered">Търсене по критерии:</h4>
+            <section class="bg-secondary text-light p-5 text-center text-sm-start">
+            <div class="container">
+                <div class="d-sm-flex align-items-center justify-content-between">
+                    <div >
+                        <label class="text-warning h3 display-flex"> Opportunity </label>
+                        <select type="text" th:field="*{opportunity.description}" required>
+                            <option th:each="op : ${listOpportunities}"
+                                    th:text="${op.description}"
+                                    th:value="${op.id}">
+                            </option>
+                        </select>
+                    </div>
+                    <div >
+                        <label class="text-warning h3"> Interest </label>
+                        <select type="text" th:field="*{interest.description}" required>
+                            <th:block th:each="interest : ${listInterests}">
+                                <option th:text="${interest.description}" th:value="${interest.id}"/>
+                            </th:block>
+                        </select>
+                    </div>
+                    <a class="btn btn-outline-info" href="#">Търси</a>
+                </div>
             </div>
-        </div>
-    </section>
+
+        </section>
 </div>
 
 <!--<div class="container centered" th:if="${LISTRECORDS != null & ${INTEREST_FELD}}">-->
-<div class="container centered" th:if="${}}">
+<!--<div class="container centered" th:if="${}">-->
+<div class="container centered">
     <table class="table table-stripped">
         <thead>
         <tr>
@@ -81,22 +66,24 @@
         </tr>
         </thead>
         <tbody>
-        <tr th:each="offer : ${}">
-            <td th:text="${offer.description}"></td>
-            <td th:text="${offer.location}"></td>
-            <td th:text="${offer.opportunity}"></td>
-            <td th:text="${offer.business}"></td>
-            <td th:text="${offer.interest}"></td>
+        <tr>
+            <!--                    <td th:text="${offer.description}"></td>-->
+            <!--                    <td th:text="${offer.location}"></td>-->
+            <!--                    <td th:text="${offer.opportunity}"></td>-->
+            <!--                    <td th:text="${offer.business}"></td>-->
+            <!--                    <td th:text="${offer.interest}"></td>-->
 
             <td>
-                <a class="btn btn-secondary"
-                   th:href="@{/hotels/edit/{hotelId}(hotelId=${hotel.id})}">Кандидатствай</a>
+                <a class="btn btn-outline-info"
+                >Кандидатствай</a>
             </td>
         </tr>
         </tbody>
-
     </table>
 </div>
+
+<!--    </table>-->
+<!--</div>-->
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
